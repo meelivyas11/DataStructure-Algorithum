@@ -1,6 +1,6 @@
 package Linked_List;
 
-public class ReveseSinglyLinkedList {
+public class ReverseSinglyLinkedList {
 
 	public static void revese()
 	{

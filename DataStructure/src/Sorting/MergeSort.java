@@ -1,55 +1,61 @@
 package Sorting;
 
-import java.util.*;
-
-public class MergeSort
-{
-	public static void main(String[] args)
-	{
-		Integer[] a = {2, 6, 3, 5, 1};
-		mergeSort(a);
-		System.out.println(Arrays.toString(a));
-	}
-
-	public static void mergeSort(Comparable [ ] a)
-	{
-		Comparable[] tmp = new Comparable[a.length];
-		mergeSort(a, tmp,  0,  a.length - 1);
-	}
-
-
-	private static void mergeSort(Comparable [ ] a, Comparable [ ] tmp, int left, int right)
-	{
-		if( left < right )
-		{
-			int center = (left + right) / 2;
-			mergeSort(a, tmp, left, center);
-			mergeSort(a, tmp, center + 1, right);
-			merge(a, tmp, left, center + 1, right);
-		}
-	}
-
-
-    private static void merge(Comparable[ ] a, Comparable[ ] tmp, int left, int right, int rightEnd )
-    {
-        int leftEnd = right - 1;
-        int k = left;
-        int num = rightEnd - left + 1;
-
-        while(left <= leftEnd && right <= rightEnd)
-            if(a[left].compareTo(a[right]) <= 0)
-                tmp[k++] = a[left++];
-            else
-                tmp[k++] = a[right++];
-
-        while(left <= leftEnd)    // Copy rest of first half
-            tmp[k++] = a[left++];
-
-        while(right <= rightEnd)  // Copy rest of right half
-            tmp[k++] = a[right++];
-
-        // Copy tmp back
-        for(int i = 0; i < num; i++, rightEnd--)
-            a[rightEnd] = tmp[rightEnd];
+public class MergeSort {
+    
+    private static int[] array = {45,23,11,89,77,98,4,28,65,43};
+    private static int length = array.length;
+    private static int[] tempMergArr =  new int[length];
+   
+    public static void main(String a[]){
+         
+        doMergeSort(0, length - 1);
+        
+        for(int i:array){
+            System.out.print(i);
+            System.out.print(" ");
+        }
     }
- }
+     
+    public void sort(int inputArr[]) {
+        
+    }
+ 
+    private static void doMergeSort(int lowerIndex, int higherIndex) {
+         
+        if (lowerIndex < higherIndex) {
+            int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
+            // Below step sorts the left side of the array
+            doMergeSort(lowerIndex, middle);
+            // Below step sorts the right side of the array
+            doMergeSort(middle + 1, higherIndex);
+            // Now merge both sides
+            mergeParts(lowerIndex, middle, higherIndex);
+        }
+    }
+ 
+    private static void mergeParts(int lowerIndex, int middle, int higherIndex) {
+ 
+        for (int i = lowerIndex; i <= higherIndex; i++) {
+            tempMergArr[i] = array[i];
+        }
+        int i = lowerIndex;
+        int j = middle + 1;
+        int k = lowerIndex;
+        while (i <= middle && j <= higherIndex) {
+            if (tempMergArr[i] <= tempMergArr[j]) {
+                array[k] = tempMergArr[i];
+                i++;
+            } else {
+                array[k] = tempMergArr[j];
+                j++;
+            }
+            k++;
+        }
+        while (i <= middle) {
+            array[k] = tempMergArr[i];
+            k++;
+            i++;
+        }
+ 
+    }
+}

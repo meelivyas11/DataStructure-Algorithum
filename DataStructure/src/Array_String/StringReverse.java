@@ -2,13 +2,15 @@ package Array_String;
 
 public class StringReverse {
 	
-	public static void Que2Main()
+	public static void main(String[] args)
 	{
 	String temp = "abcdefgG";
-	String reverseString = reverseStr(temp);
+/*	String reverseString = reverseStr(temp);
 	System.out.println("Reverse : " + reverseString);
 	
-	finalRev(temp);
+	finalRev(temp);*/
+	
+	recursiveReverse(temp, "");
 	}
 	
 	// doesnt handle the null 
@@ -38,6 +40,19 @@ public class StringReverse {
 		}
 		
 		System.out.println(tempArray);
+	}
+	
+	public static void recursiveReverse(String temp, String result) {
+		
+		//char[] tempArray =temp.toCharArray();
+		if(temp.length() == 1) {
+			System.out.println(result + temp.charAt(0));
+		}
+		else {
+			recursiveReverse(temp.substring(0,temp.length()-1), result + temp.charAt(temp.length()-1));
+		}
 		
 	}
+	
+	
 }

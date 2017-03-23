@@ -17,12 +17,14 @@ public class FindPermutationOfIntegers {
 		
 		if (word.isEmpty()) { 
 			System.out.println(perm + word); 
-			} 
-		else { 
-			for (int i = 0; i < word.length(); i++) { 
+		} 
+		else 
+		{ 
+			for (int i = 0; i < word.length(); i++) 
+			{ 
 				permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length())); 
-				} 
 			} 
+		} 
 	}
 
 	

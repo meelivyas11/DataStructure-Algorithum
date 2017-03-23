@@ -5,7 +5,7 @@ public class ViewTree {
 public static void main(String[] args) {
 		
 		System.out.println("Tree Main");
-		TreeNode head = CreateTree.creatTreeMain();
+		TreeNode head = CreateTree.creatTreeMain(new int[] {42, 25, 65, 12, 37, 43, 87, 9, 13, 30, 99});
 		
 		preOrder(head);
 		

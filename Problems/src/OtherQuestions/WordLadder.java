@@ -12,8 +12,7 @@ public class WordLadder {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
 		String start = "hit";
 		String end = "cog";
 		List<String> dict = new ArrayList<String>();

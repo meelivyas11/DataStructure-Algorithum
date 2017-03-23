@@ -69,9 +69,7 @@ public Node addNeighbor(Node root){
         {
             addneighbour(queHead, ((LinkedList<TreeNode>)que).get(0));
         }
-        
         currentIndex++;
-        
     }
     
 } */

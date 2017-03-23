@@ -3,9 +3,9 @@ package Sorting;
 public class InsertionSorting {
 
 	public static void main(String[] args) {
-		int [] a = {7,6,3,2,5,8,22,34};
+		int [] a = {7,6,3,29,5,8,22,34};
 		
-		for(int i=1;i<a.length-1; i++)
+		for(int i=1;i<a.length; i++)
 		{
 			int temp = a[i];
 			int c = i;

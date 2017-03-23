@@ -3,7 +3,7 @@ public class CoinPermutation {
 		public static int[] coins ={1,5,10,25,50,100};
 		
 		public static void main(String[] args){
-			double target = 15;
+			double target = 7;
 			String tempSoln = new String();
 			findAllCombinationsRecursive(tempSoln, 0, target);
 		}

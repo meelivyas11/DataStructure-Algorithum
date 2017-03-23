@@ -1,18 +1,27 @@
 package OtherQuestions;
 
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
+//Sort the letters in one word by the order they occur in another in linear time
 public class SortStringByDictionary {
 
 	public static void main(String[] args) {
-		//Sort the letters in one word by the order they occur in another in linear time
 		
-		String dict = "hello";
-		String givenStr = "llllooeheeeehhhho";
+		
+		String dict = "zhello";
+		String givenStr = "llllooeheeeehhhhozzzzzzzzzzz";
 		HashMap<Character, String> hm = new HashMap<Character, String>();
-		Set<Character> uniqueChar = new HashSet<Character>();
+		
+		
+		// Reason y we are using LinkedHashSet??
+			// HashSet - no ordering
+			// LinkedHashSet - Insertion Order
+			// TreeSet - Alphabetical Order 
+		
+		
+		Set<Character> uniqueChar = new LinkedHashSet<Character>();
 		for(Character c: dict.toCharArray())
 		{
 			if(!hm.containsKey(c)) {
