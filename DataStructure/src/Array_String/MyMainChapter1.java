@@ -28,5 +28,4 @@ public class MyMainChapter1 {
 		InetAddress ia = InetAddress.getByName("www.brainbench.com");
 		System.out.println(ia);
 	}
-
 }

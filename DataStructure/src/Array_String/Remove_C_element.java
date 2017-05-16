@@ -3,12 +3,14 @@ package Array_String;
 import java.util.Arrays;
 import java.util.List;
 
+// Triple sum problem
+// show all C-values which are equal to A+B
 public class Remove_C_element {
 	
 	public static void main(String[] args)
 	{
 		method_n3();
-		//method_n2();
+		method_n2();
 	}
 	
 	public static void method_n2()

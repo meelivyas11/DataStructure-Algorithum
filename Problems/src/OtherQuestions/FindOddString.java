@@ -9,9 +9,9 @@ public class FindOddString {
 	 */
 	public static void main(String[] args) {
 		String [] strArr = {"a", "a", "b", "b", "b", "c", "c"};		
-		/*String s = getOdd(strArr);
-		System.out.println(s);
-		*/
+		
+		System.out.println(getOdd(strArr));
+		
 		System.out.println(getOdd2(strArr));
 	}
 	
