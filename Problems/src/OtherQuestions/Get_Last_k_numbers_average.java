@@ -5,7 +5,6 @@ import java.util.Stack;
 public class Get_Last_k_numbers_average {
 
 	public static void main(String[] args) {
-		System.out.println("meeli vyas");
 		Stack<Integer> s = new Stack<Integer>();
 		int k=6;
 		float avg;

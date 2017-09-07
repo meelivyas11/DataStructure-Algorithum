@@ -15,11 +15,13 @@ public class QueryMethod {
 		q1.remove();
 		q1.remove();
 		
-		System.out.println("Queue poll: " + q1.poll());
+		System.out.println("Queue poll: " + q1.poll());  // retrive's and removes
 		
-		int aa = ((LinkedList<Integer>) q1).get(0);
-		if(aa==3)
-			System.out.println(((LinkedList<Integer>) q1).get(0));
+		System.out.println("get(0) : "+ ((LinkedList<Integer>) q1).get(0));  // retrive's
+		
+		System.out.println("q1.peek() : " + q1.peek()); // retrive's
 	}
-
+	// q.add(2) -- add element in Queue
+	// q.poll() -- retrive's and removes element
+	// q.peek() -- retrive's
 }

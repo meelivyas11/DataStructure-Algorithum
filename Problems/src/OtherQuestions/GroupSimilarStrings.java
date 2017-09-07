@@ -18,7 +18,10 @@ public class GroupSimilarStrings {
 		{
 			char[] charArrayForInputString = inputStrArry[i].toCharArray();
 			Arrays.sort(charArrayForInputString);
-			sortedString = new String(charArrayForInputString);
+			sortedString = String.valueOf(charArrayForInputString) ; //new String(charArrayForInputString);
+			
+			//charArrayForInputString.toString();   -- does not work as it returns a object
+			
 			
 			if (hashMap.containsKey(sortedString)) {
 				List<String> containsList = hashMap.get(sortedString);

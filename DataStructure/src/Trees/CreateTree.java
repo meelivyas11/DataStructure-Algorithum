@@ -35,7 +35,6 @@ public class CreateTree {
 			}
 			else
 			{
-				if(d>node.data)
 					if(node.right!=null)
 						addNode(d,node.right);
 					else

@@ -22,6 +22,7 @@ public class ShellSorting {
 			}
 			interval = interval/2;
 		}
+		System.out.println();
 		for(int j=0;j<a.length;j++)
 			System.out.print(a[j] + "\t" );		
 	}

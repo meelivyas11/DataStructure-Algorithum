@@ -31,14 +31,23 @@ public class CreateDoubllyLinkedList {
 			}
 			else
 			{
-				doubllyNode start2 = start;
+				// add elements at the end
+				/*doubllyNode start2 = start;
 				doubllyNode temp = new doubllyNode();
 				temp.data = d;
 				while(start2.next != null)
 					start2 = start2.next;
 				start2.next = temp;
 				temp.prev = end;
-				end = temp;
+				end = temp;*/
+				
+				// add elements in the beginning
+				doubllyNode temp = new doubllyNode();
+				temp.data = d;
+				temp.next = start;
+				start.prev = temp;
+				start = temp;
+				
 			}
 		}
 

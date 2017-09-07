@@ -2,6 +2,7 @@ package OtherQuestions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -16,7 +17,7 @@ public class WordLadder {
 		String start = "hit";
 		String end = "cog";
 		List<String> dict = new ArrayList<String>();
-		List<String> visitedWords =  new ArrayList<String>();
+		
 		dict.add("hit");
 		dict.add("hot");
 		dict.add("dot");
@@ -25,6 +26,45 @@ public class WordLadder {
 		dict.add("log");
 		dict.add("cog");
 		
+		//sol1(start, end, dict);
+		sol2(start, end, dict);
+		
+	}
+	
+	// Deleting while iterating through the List
+	public static void sol2(String start, String end, List<String> dict) {
+		String result = start + "->";
+		
+		if(dict.contains(start)) 
+			dict.remove(start);
+		
+		Iterator<String> it = dict.iterator();
+		while(it.hasNext()) {
+			String temp = it.next();
+			int num = 0;
+			if(temp.length()!=start.length()) continue;
+			
+			for(int i=0; i<start.length(); i++) {
+				if(temp.charAt(i) != start.charAt(i)) {
+					num++;
+				}
+			}
+			
+			if(num >1) continue;
+			
+			result = result + temp + "->";
+			it.remove();
+			if(temp.equals(end)) break;
+			start = temp;
+			
+		}
+		
+		System.out.println("Result is : " + result);
+	}
+	
+	public static void sol1(String start, String end, List<String> dict) {
+		
+		List<String> visitedWords =  new ArrayList<String>();
 		HashMap<String, String> hm = new HashMap<String, String>();
 		Queue<String> que = new LinkedList<String>();
 		que.add(start);

@@ -16,6 +16,8 @@ public class StackMethod {
 		System.out.println("size :: " + s.size());
 		System.out.println("Stack pop :" + s.pop());
 		
+		System.out.println("Peek: " + s.peek());  // only retrive's 
+		
 	}
 	
 }

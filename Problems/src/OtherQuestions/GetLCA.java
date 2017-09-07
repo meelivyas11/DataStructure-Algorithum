@@ -28,7 +28,7 @@ public class GetLCA {
 	static TreeNode head = null;
 	
 	public static void main(String[] args) {
-		int[] a = {8,3,10,1,6,24,5};
+		int[] a = {10, 5,15,3,7,13,19,1,4,6,9,14,16,20,-1,2, 17,12}; //{8,3,10,1,6,24,5};
 		
 		
 		for(int i=0; i<a.length; i++) {
@@ -36,9 +36,33 @@ public class GetLCA {
 		}
 		
 		ViewTreeInorder(head);
-		System.out.println("\n LCA of 1 and 24 is :" + getLCA(1, 24, head).value);
+		System.out.println("\n LCA of 12 and 14 from first nethod is :" + getLCA(12, 14, head).value);
+		System.out.println("\n LCA of 12 and 14 from second nethod is :" + getLCA2(12, 14, head).value);
 	}
 	
+	public static TreeNode getLCA2(int a, int b, TreeNode head) //1  //5 //h
+	{	TreeNode current = head;
+		boolean flag = true;
+		while(flag) {
+			flag=false;
+			
+			if(current.left!=null && a<current.value && b<current.value) {
+				flag=true;
+				current = current.left;
+			}
+			
+			if(current.right!=null && a>current.value && b>current.value) {
+				flag=true;
+				current = current.right;
+			}
+			
+		}
+		return current;
+	}
+	
+	
+	// This method breaks in a case when we need to traverse right first and then to left
+	// input example {10, 5,15,3,7,13,19,1,4,6,9,14,16,20,-1,2, 17,12} with node 12 and 14
 	public static TreeNode getLCA(int a, int b, TreeNode head) //1  //5 //h
 	{
 		if(head==null)

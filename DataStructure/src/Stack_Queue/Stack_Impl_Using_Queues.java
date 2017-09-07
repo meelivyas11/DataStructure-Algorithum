@@ -14,7 +14,7 @@ public class Stack_Impl_Using_Queues {
             int i = 0;
             return i;
         } else {
-            int pop = q1.remove();
+            int pop = q1.poll();
             return pop;
         }
     }
