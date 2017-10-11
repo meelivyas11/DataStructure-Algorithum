@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /*
-   list1 -->aaa,bbb,ddd,xyxz,... 
+    list1 -->aaa,bbb,ddd,xyxz,... 
 	list2-->bbb,ccc,ccc,hkp,.. 
 	list3> ddd,eee,,ffff,lmn,.. 
 	
@@ -14,6 +14,20 @@ import java.util.List;
 	If the words are repeated in same list its valid. 
 	In the above case 
 	it should print aaa-->ccc-->ccc-->eee--->fff-->glk-->hkp-->lmn-->xyxz
+	
+	
+	Note:
+		This can be done in two ways without using the Collections.sort(list) function
+		1) Using extra space:
+			Merge list1 and list2 together to List4 
+			Merge list3 with above list4 to get the final result list5
+			
+		2) without extra space:
+			while (i1 < l1.size() && i2 < l2.size() && i3 < l3.size()) {}
+			// put incomplete list to l1 and l2
+			while (i1 < l1.size() && i2 < l2.size()) {}
+			// put incomplete list to l1
+			while (i1 < l1.size() ) {} 
  */
 public class RemoveDuplicatedFrom3Lists {
 

@@ -10,9 +10,9 @@ class MyHashMap {
 	public static void main(String[] args) {
 		MyHashMap myHm = new MyHashMap();
 		myHm.put(1, "Meeli");
-		myHm.put(2, "Harshal");
+		myHm.put(2, "Yogesh");
 		myHm.put(3, "Vyas");
-		myHm.put(3, "Shah");
+		myHm.put(3, "Parul");
 		
 		System.out.println(myHm.get(1));
 		System.out.println(myHm.get(2));

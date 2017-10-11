@@ -28,8 +28,8 @@ public class MySet<E> {
 	public static void main(String[] args) {
 		MySet<String> ms = new MySet<String>();
 		ms.addSet("Meeli");
-		ms.addSet("Meeli");
-		ms.addSet("Harshal");
+		ms.addSet("Yogesh");
+		ms.addSet("Vyas");
 		
 		System.out.println("Set size is: " + ms.getSetSize());
 	}

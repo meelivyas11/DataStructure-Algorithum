@@ -20,11 +20,25 @@ public class RemoveDuplicatesFrom2Lists {
 			if(A[i] < B[j]) { res.add(A[i]); i++;}
 			else if(B[j] < A[i]) {res.add(B[j]); j++;}
 			else if(A[i] == B[j]) { res.add(A[i]); i++;j++;}
-			else { res.add(A[i]); res.add(B[j]); i++;j++;}
+			//else { res.add(A[i]); res.add(B[j]); i++;j++;}
 		}
 		
 		while(i<A.length) {	res.add(A[i]); i++;	}
 		while(j<B.length) {	res.add(B[j]); j++;	}
+		
+		
+		/*
+		 *  Instead of using two while loops above 
+		 *  another way to achieve it:
+		 *  
+		 *  if(j<B.length)
+		 *  {
+		 *  	i =j;
+		 *  	A = B;
+		 *  }
+		 *  while(i<A.length) {	res.add(A[i]); i++;	}
+		 * 
+		 */
 		
 		for(Integer aa : res) {
 			System.out.print(aa + ",");

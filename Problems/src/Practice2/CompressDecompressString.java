@@ -9,7 +9,7 @@ public class CompressDecompressString {
 
 	public static void main(String[] args) {
 		String res = "";
-		String str = "abcddd";
+		String str = "ababab";
 		System.out.println("Original String is: " + str);
 		for(int i=1; i<str.length()/2; i++) {
 			res = compress(str, i);

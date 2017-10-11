@@ -2,6 +2,7 @@ package Practice2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -35,6 +36,51 @@ public class StronglyAndWeeklyConnected {
 		
 		String target = "ABC";
 		String[] history = {"first:ABC", "first:HIJ", "sec:HIJ", "sec:KLM", "third:NOP", "fourth:ABC", "fourth:QRS", "first:DEF", "fifth:KLM", "fifth:TUV"};
+		
+	//	solutionGraph(history,target);
+		solutionHashMap(history,target);
+	}
+	
+	// Shorter Solution
+	public static void solutionHashMap(String[] history, String target) {
+		int weekcount = 0;
+		HashMap<String, List<String>> hm = new HashMap<String, List<String>>();
+		List<String> lst = new ArrayList<String> (Arrays.asList(history));
+		Queue<String> que = new LinkedList<String>();
+		que.add(target);
+		while(!que.isEmpty()) {
+			String v = que.poll();
+			hm.put(v, new ArrayList<String>());
+			for(int i=0; i<lst.size(); i++) {
+				String[] a1 = lst.get(i).split(":");
+				if(a1[1].equals(v)) {
+					lst.remove(lst.get(i));
+					String user = a1[0];
+					for(int j = 0; j<lst.size(); j++) {
+						String[] a2 = lst.get(j).split(":");
+						if(a2[0].equals(user) && !a2[1].equals(v)) {
+							lst.remove(lst.get(j));
+							hm.get(v).add(a2[1]);
+							que.add(a2[1]);
+							
+							// counting week-edges
+							if(!v.equals(target)) {
+								weekcount++;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		System.out.println("Stongly connected: " + hm.get(target).size());
+		System.out.println("weekly connected: " + weekcount);
+		
+	}
+	
+	
+	public static void solutionGraph(String[] history, String target) {
+		
 		List<String> his = new ArrayList<String>(Arrays.asList(history));
 		
 		GraphNode head = new GraphNode(target);

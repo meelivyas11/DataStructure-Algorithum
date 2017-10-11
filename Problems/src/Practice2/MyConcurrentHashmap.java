@@ -8,13 +8,6 @@ public class MyConcurrentHashmap {
 	}
 }
 
-
-
-
-
-
-
-
 /*public class MyConcurrentHashmap {
 
 	private static final int DEFAULT_CONCURRENCY_LEVEL = 16;

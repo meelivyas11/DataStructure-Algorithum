@@ -2,6 +2,7 @@ package Sorting;
 
 public class InsertionSorting {
 
+	// average complexity as O(n^2)
 	public static void main(String[] args) {
 		int [] a = {7,6,3,29,5,8,22,34};
 		

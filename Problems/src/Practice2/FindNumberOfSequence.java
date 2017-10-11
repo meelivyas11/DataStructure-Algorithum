@@ -1,6 +1,8 @@
 package Practice2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -36,6 +38,9 @@ public class FindNumberOfSequence {
 		int[] A = {3};
 		int[] B = { 11, 13, 16 };
 		int[] C = {45};
+		
+		int[] min = Collections.min(Arrays.asList(B), null);
+		System.out.println(min[0] + ":::::::::::::" + min[1]);
 		
 		List<String> subSetsOfB =  getSubSets(B);
 		for(int i = 0; i<A.length; i++) {

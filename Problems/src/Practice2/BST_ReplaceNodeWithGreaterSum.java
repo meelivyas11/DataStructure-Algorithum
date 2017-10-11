@@ -4,7 +4,7 @@ package Practice2;
  * Only constraint being that I was not allowed to use any global or static variable.
  * 
  * 
- * When we do reverse inorder traverse of BST, that is right--root--left, the nodes visited before current node 
+ * When we do reverse in-order traverse of BST, that is right--root--left, the nodes visited before current node 
  * are those having greater value. By keeping a record of the sum of all nodes visited, we can easily fix the problem. 
  * 
  */
